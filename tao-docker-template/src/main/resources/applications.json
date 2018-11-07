@@ -1,0 +1,52 @@
+[
+	{
+		"id": "sample-application",
+		"label": "Sample application",
+		"version": "1.0",
+		"description": "Some description",
+		"authors": "Some author",
+		"copyright": "(C) Copyright notice",
+		"nodeAffinity": "Any",
+		"sources": [
+			{
+				"id": null,
+				"parentId": "sample-application",
+				"name": "sourceParamName",
+				"cardinality": 1,
+				"dataDescriptor": {
+					"formatType": "RASTER"
+				}
+			}
+		],
+		"targets": [
+			{
+				"id": null,
+				"parentId": "sample-application",
+				"name": "targetParamName",
+				"dataDescriptor": {
+					"formatType": "RASTER",
+					"location": "output_sample_application.tif"
+				}
+			}
+		],
+		"containerId": "2a609116-27d4-4e47-ace8-e3a8661c9534",
+		"fileLocation": "binary",
+		"workingDirectory": ".",
+		"templateType": "VELOCITY",
+		"multiThread": false,
+		"visibility": "SYSTEM",
+		"active": true,
+		"parameterDescriptors": [
+			{
+				"id": "parameterName",
+				"type": "REGULAR",
+				"dataType": "java.lang.String;",
+				"defaultValue": null,
+				"description": "Parameter description",
+				"label": "Parameter label",
+				"notNull": false
+			}
+		],
+		"templatecontents": "-sourceParamName=$sourceParamName\n-targetParamName\n$targetParamName\n"
+	}
+]

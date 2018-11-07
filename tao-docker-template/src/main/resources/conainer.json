@@ -1,0 +1,13 @@
+{
+	"id": "2a609116-27d4-4e47-ace8-e3a8661c9534",
+	"name": "sample-container",
+	"tag": "Sample Docker container",
+	"applicationPath": null,
+	"applications": [
+		{
+			"path": "binary",
+			"name": "Sample app",
+			"memoryRequirements": 4096
+		}
+	]
+}

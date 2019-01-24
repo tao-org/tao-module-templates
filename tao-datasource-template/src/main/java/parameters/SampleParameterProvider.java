@@ -4,6 +4,7 @@ import download.SampleDownloadStrategy;
 import ro.cs.tao.configuration.ConfigurationManager;
 import ro.cs.tao.datasource.ProductFetchStrategy;
 import ro.cs.tao.datasource.param.DataSourceParameter;
+import ro.cs.tao.datasource.param.ParameterName;
 import ro.cs.tao.datasource.param.ParameterProvider;
 
 import java.util.Collections;
@@ -13,11 +14,12 @@ import java.util.Map;
 
 public class SampleParameterProvider implements ParameterProvider {
 
-    public Map<String, Map<String, DataSourceParameter>> getSupportedParameters() {
+    public Map<String, Map<ParameterName, DataSourceParameter>> getSupportedParameters() {
         return Collections.unmodifiableMap(
-                new HashMap<String, Map<String, DataSourceParameter>>() {{
-                    put("SampleSensor", new LinkedHashMap<String, DataSourceParameter>() {{
-                        put("sampleParameter", new DataSourceParameter("remoteParameter", String.class, "default_value"));
+                new HashMap<String, Map<ParameterName, DataSourceParameter>>() {{
+                    put("SampleSensor", new LinkedHashMap<ParameterName, DataSourceParameter>() {{
+                        put(ParameterName.create("sampleParameter", "sampleParameter"),
+                            new DataSourceParameter("remoteParameter", String.class, "default_value"));
                     }});
                 }});
     }

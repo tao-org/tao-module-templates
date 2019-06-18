@@ -1,7 +1,7 @@
 package parameters;
 
 import download.SampleDownloadStrategy;
-import ro.cs.tao.configuration.ConfigurationManager;
+import ro.cs.tao.component.SystemVariable;
 import ro.cs.tao.datasource.ProductFetchStrategy;
 import ro.cs.tao.datasource.param.DataSourceParameter;
 import ro.cs.tao.datasource.param.ParameterName;
@@ -32,7 +32,7 @@ public class SampleParameterProvider implements ParameterProvider {
         return Collections.unmodifiableMap(
                 new HashMap<String, ProductFetchStrategy>() {{
                     put("SampleSensor",
-                        new SampleDownloadStrategy(ConfigurationManager.getInstance().getValue("product.location")));
+                        new SampleDownloadStrategy(SystemVariable.SHARED_WORKSPACE.value()));
                 }});
     }
 }
